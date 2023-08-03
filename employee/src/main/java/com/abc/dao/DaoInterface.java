@@ -12,7 +12,7 @@ public interface DaoInterface {
 //
 	    public boolean updateEmployee(Employee emp);
 //
-	    public Employee getEmployeeById(int empid);
+	    public Employee getEmployeeByFnameSname(String fname,String sname);
 //
 	    public ArrayList<Employee> viewAllEmployees();
 

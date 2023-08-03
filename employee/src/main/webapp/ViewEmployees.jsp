@@ -10,8 +10,10 @@
 </head>
 <body>
 	<%
-		Employee e=(Employee)request.getAttribute("emp");
-		out.println("\n"+e.getFirst_name());
+		ArrayList<Employee> list=(ArrayList<Employee>)request.getAttribute("allemps");
+		for(Employee e:list)
+		{
+			out.println("\n"+e.getFirst_name());
 			out.println("\n"+e.getSurname());
 			out.println("\n"+e.getAge());
 			out.println("\n"+e.getGender());
@@ -19,6 +21,7 @@
 			out.println("\n"+e.getAddress());
 			out.println("\n"+e.getContact_number());
 			out.println("=======================");
+		}
 	%>
 </body>
 </html>

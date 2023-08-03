@@ -4,30 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  		<servlet-name>add</servlet-name>
-  		<servlet-class>com.abc.controller.AddController</servlet-class>
-  </servlet>
-   <servlet>
-  		<servlet-name>delete</servlet-name>
-  		<servlet-class>com.abc.controller.DeleteController</servlet-class>
-  </servlet>
-  <servlet>
-  		<servlet-name>view_all</servlet-name>
-  		<servlet-class>com.abc.controller.viewEmployee</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  		<servlet-name>add</servlet-name>
-  		<url-pattern>/add</url-pattern>
- </servlet-mapping>
- <servlet-mapping>
-  		<servlet-name>delete</servlet-name>
-  		<url-pattern>/delete</url-pattern>
- </servlet-mapping>
- <servlet-mapping>
-  		<servlet-name>view_all</servlet-name>
-  		<url-pattern>/view_all</url-pattern>
- </servlet-mapping>
+  
  <welcome-file-list>
  	<welcome-file>first.html</welcome-file>
  </welcome-file-list>

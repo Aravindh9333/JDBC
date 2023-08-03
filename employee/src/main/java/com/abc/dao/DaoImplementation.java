@@ -93,11 +93,12 @@ public class DaoImplementation implements DaoInterface {
 
 
 	
-	public Employee getEmployeeById(int empid) {
+	public Employee getEmployeeByFnameSname(String fname,String sname) {
 		Employee em=null;
 		try {
-			PreparedStatement pstmt=con.prepareStatement("select * from employee where emp_id=?");
-			pstmt.setInt(1, empid);
+			PreparedStatement pstmt=con.prepareStatement("select * from employee where first_name=? and surname=?");
+			pstmt.setString(1,fname);
+			pstmt.setString(2, sname);
 			 ResultSet i=pstmt.executeQuery();
 			if(i.next())
 			{
@@ -109,6 +110,7 @@ public class DaoImplementation implements DaoInterface {
 			em.setAge(i.getInt(5));
 			em.setAddress(i.getString(6));
 			em.setContact_number(i.getLong(7));
+			em.setSalary(i.getDouble(8));
 			}
 			
 		} 
@@ -136,6 +138,7 @@ public class DaoImplementation implements DaoInterface {
 				em.setAge(rs.getInt(5));
 				em.setAddress(rs.getString(6));
 				em.setContact_number(rs.getLong(7));
+				em.setSalary(rs.getDouble(8));
 				e1.add(em);
 			}
 		} catch (SQLException e) {
@@ -149,7 +152,7 @@ public class DaoImplementation implements DaoInterface {
 	
 	public boolean updateEmployee(Employee emp) {
 		boolean b=false;
-		Employee e=getEmployeeById(emp.getEmpid());
+		Employee e=getEmployeeByFnameSname(emp.getFirst_name(),emp.getSurname());
 		if(emp.getFirst_name()!=null)
 			e.setFirst_name(emp.getFirst_name());
 		if(emp.getSurname()!=null)
