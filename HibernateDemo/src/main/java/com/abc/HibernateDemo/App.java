@@ -13,8 +13,10 @@ import com.abc.HibernateDemo.dao.*;
 public class App 
 {
 	Scanner sc=new Scanner(System.in);
-	DaoInterface dao=new DaoImplementation();
-	
+	DaoInterface dao=new DaoImpl();
+	public App() {
+		
+	}
     public static void main( String[] args )
     {
         App a=new App();
@@ -44,6 +46,7 @@ public class App
         	}
         	else
         	{
+        		System.out.println("Thank You");
         		break;
         	}
         }
@@ -58,13 +61,17 @@ public class App
 			System.out.println("Name "+e.getName());
 			System.out.println("Age "+e.getAge());
 			System.out.println("Contact Number "+e.getContact_number());
-			
+			System.out.println("The Salary : "+e.getSalary());
 		}
 		
 	}
 	private void viewById() {
 		System.out.println("Enter Id To display");
-		dao.getEmployeeById(sc.nextInt());
+		Emp e=dao.getEmployeeById(sc.nextInt());
+		System.out.println("Id "+e.getId());
+		System.out.println("Name "+e.getName());
+		System.out.println("Age "+e.getAge());
+		System.out.println("Contact Number "+e.getContact_number());
 	}
 	private void addEmployee() {
 		Emp e=new Emp();
@@ -75,7 +82,9 @@ public class App
 		System.out.println("Enter Age");
 		e.setAge(sc.nextInt());
 		System.out.println("Enter contact number");
-		e.setContact_number(sc.nextDouble());
+		e.setContact_number(sc.nextLong());
+		System.out.println("Enter Salary");
+		e.setSalary(sc.nextDouble());
 		
 		dao.addEmployee(e);
 		

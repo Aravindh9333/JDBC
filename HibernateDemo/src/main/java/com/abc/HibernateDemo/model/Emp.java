@@ -9,7 +9,15 @@ public class Emp {
 	int id;
 	int age;
 	String name;
-	double contact_number;
+	double salary;
+	long contact_number;
+	
+	public long getContact_number() {
+		return contact_number;
+	}
+	public void setContact_number(long contact_number) {
+		this.contact_number = contact_number;
+	}
 	public int getId() {
 		return id;
 	}
@@ -28,11 +36,11 @@ public class Emp {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getContact_number() {
-		return contact_number;
+	public double getSalary() {
+		return salary;
 	}
-	public void setContact_number(double contact_number) {
-		this.contact_number = contact_number;
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
 	
 }

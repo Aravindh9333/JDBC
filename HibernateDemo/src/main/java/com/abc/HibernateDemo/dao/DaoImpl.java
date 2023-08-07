@@ -2,6 +2,7 @@ package com.abc.HibernateDemo.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -9,13 +10,14 @@ import org.hibernate.cfg.Configuration;
 
 import com.abc.HibernateDemo.model.Emp;
 
-public class DaoImplementation implements DaoInterface{
-	SessionFactory sf=null;
-	public DaoImplementation()
-	{
-		sf=new Configuration().configure("hybernate.cfg.xml").buildSessionFactory();
-	}
+public class DaoImpl implements DaoInterface{
 
+	SessionFactory sf=null;
+	public DaoImpl() {
+		sf=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+	}
+	
+	
 	@Override
 	public void addEmployee(Emp e) {
 		Session s=sf.openSession();
